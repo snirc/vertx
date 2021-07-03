@@ -1,0 +1,32 @@
+{
+  "host" : "172.16.222.13",
+  "port" : 27017,
+  "serverSelectionTimeoutMS" : 3000,
+
+  "maxPoolSize" : 10,
+  "minPoolSize" : 2,
+  "maxIdleTimeMS" : 300000,          
+  "maxLifeTimeMS" : 3600000,         
+  "waitQueueMultiple"  : 10,         
+  "waitQueueTimeoutMS" : 10000,      
+  "maintenanceFrequencyMS" : 2000,   
+  "maintenanceInitialDelayMS" : 500,
+
+  "authMechanism"     : "GSSAPI",       
+  "egssapiServiceNam" : "cryptoServices",
+
+  "connectTimeoutMS" : 300000,
+  "socketTimeoutMS"  : 100000,
+  "sendBufferSize"    : 8192,
+  "receiveBufferSize" : 8192,
+  "keepAlive" : true,
+
+ 
+  "heartbeat.socket" : {
+    "connectTimeoutMS" : 300000, 
+    "socketTimeoutMS"  : 100000, 
+    "sendBufferSize"    : 8192,  
+    "receiveBufferSize" : 8192,  
+    "keepAlive" : true
+  }
+}

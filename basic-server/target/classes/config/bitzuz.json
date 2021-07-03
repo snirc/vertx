@@ -1,0 +1,47 @@
+{
+"hosts": [
+   {
+       "host": "cluster0-shard-00-00-kubpn.mongodb.net",
+       "port": 27017
+   },
+   {
+       "host": "cluster0-shard-00-01-kubpn.mongodb.net",
+       "port": 27017
+   },
+   {
+       "host": "cluster0-shard-00-02-kubpn.mongodb.net",
+       "port": 27017
+   }
+],
+ "serverSelectionTimeoutMS" : 3000,
+
+ "maxPoolSize" : 10,
+ "minPoolSize" : 2,
+ "maxIdleTimeMS" : 300000,
+ "maxLifeTimeMS" : 3600000,
+ "waitQueueMultiple"  : 10,
+ "waitQueueTimeoutMS" : 10000,
+ "maintenanceFrequencyMS" : 2000,
+ "maintenanceInitialDelayMS" : 500,
+
+ "authMechanism"     : "SCRAM-SHA-1",
+ "egssapiServiceNam" : "cryptoServices",
+
+ "connectTimeoutMS" : 300000,
+ "socketTimeoutMS"  : 100000,
+ "sendBufferSize"    : 8192,
+ "receiveBufferSize" : 8192,
+ "keepAlive" : true,
+"username": "BitzuzKing",
+"password": "Zuz@H$crip951",
+"ssl": true,
+"authSource": "admin",
+
+ "heartbeat.socket" : {
+   "connectTimeoutMS" : 300000,
+   "socketTimeoutMS"  : 100000,
+   "sendBufferSize"    : 8192,
+   "receiveBufferSize" : 8192,
+   "keepAlive" : true
+ }
+}
