@@ -18,8 +18,9 @@ public class AppConfig {
 
     public static String MAIN_PORT = "8181";
     public static int SOCKET_PORT = 8040;
-	public  static int USER_SESSION_TIME = 60000 * 5; // 5 minutes
-	public  static int ORDER_LOCAL_SESSION_TIME = 1000 * 60 * 60 * 24; // 24 hours
+	public static int USER_SESSION_TIME = 60000 * 5; // 5 minutes
+	public static int ORDER_LOCAL_SESSION_TIME = 1000 * 60 * 60 * 24; // 24 hours
+	public static Vertx vertx;
 	
 	private static VertxDeployer vertxDeployer;
 
@@ -90,7 +91,7 @@ public class AppConfig {
 		}else {
 	        VertxOptions options = new VertxOptions()
 	        		.setBlockedThreadCheckInterval(1000*60*60);
-	        Vertx vertx = Vertx.vertx(options);
+	        vertx = Vertx.vertx(options);
 			vertxDeployer.deploy(vertx);
 		}
 	}
