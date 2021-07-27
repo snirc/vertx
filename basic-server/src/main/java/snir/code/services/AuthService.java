@@ -260,11 +260,11 @@ public class AuthService {
 				businssFunctionToRole.put(id, businssFunctionRoles);
 				MessageLog.sendMessageCode(ctx, MessageKey.BUSINSS_FUNCTION_ADDED, "BusinssFunction added ");
 			}, onError -> {
-				MessageLog.sendErrorCode(ctx, MessageKey.BUSINSS_FUNCTION_ADD_ERROR, onError.getMessage(), logger);
+				MessageLog.sendErrorCode(ctx, MessageKey.BUSINSS_FUNCTION_ADDED, onError.getMessage(), logger);
 			});
 
 		} catch (Exception e) {
-			MessageLog.sendErrorCode(ctx, MessageKey.BUSINSS_FUNCTION_ADD_ERROR, "failed to update roles in DB ", logger);
+			MessageLog.sendErrorCode(ctx, MessageKey.BUSINSS_FUNCTION_ADDED, "failed to update roles in DB ", logger);
 		}
 	}
 	

@@ -1,5 +1,5 @@
 {
-  "host" : "172.16.222.130",
+  "host" : "localhost",
   "port" : 27017,
   "serverSelectionTimeoutMS" : 3000,
 
@@ -12,14 +12,12 @@
   "maintenanceFrequencyMS" : 2000,
   "maintenanceInitialDelayMS" : 500,
 
-  "authMechanism"     : "GSSAPI",
-  "gssapiServiceName" : "myservicename",
-
   "connectTimeoutMS" : 300000,
   "socketTimeoutMS"  : 100000,
   "sendBufferSize"    : 8192,
   "receiveBufferSize" : 8192,
   "keepAlive" : true,
+  "maxWaitQueueSize" : 8000,
 
   "heartbeat.socket" : {
     "connectTimeoutMS" : 300000,

@@ -43,7 +43,7 @@ public class MessageLog {
 			try {
 				setMongoApi(instance);
 			} catch (Exception e) {
-				//TODO: Adi maybe fail start promise we can't get log mongo instance
+				//TODO:  maybe fail start promise we can't get log mongo instance
 //				startPromise.fail(e);
 			}
 		});

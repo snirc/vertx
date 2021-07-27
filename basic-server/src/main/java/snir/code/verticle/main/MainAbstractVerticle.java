@@ -1,18 +1,11 @@
 package snir.code.verticle.main;
 
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-import org.apache.maven.model.Dependency;
-import org.apache.maven.model.Model;
-import org.apache.maven.model.io.xpp3.MavenXpp3Reader;
-import org.codehaus.plexus.util.xml.pull.XmlPullParserException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 
 //import io.vertx.ext.auth.authentication.AuthenticationProvider
 import io.vertx.core.AbstractVerticle;
@@ -20,7 +13,6 @@ import io.vertx.core.Future;
 import io.vertx.core.Promise;
 import io.vertx.core.http.HttpMethod;
 import io.vertx.core.http.HttpServer;
-import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.Router;
 import io.vertx.ext.web.handler.BodyHandler;
 import io.vertx.ext.web.handler.CorsHandler;
@@ -58,17 +50,26 @@ public abstract class MainAbstractVerticle extends AbstractVerticle {
 			futures = new ArrayList<Future>();
 			rxVertx = io.vertx.rxjava.core.Vertx.vertx();
 			
-			MongoLayer.init(rxVertx);
-			MessageLog.initLogMongo();
-						
-			MongoLayer.getInstance("mongo", instance -> {
-				try {
-					mongoLayer = instance;
+			if(AppConfig.AppParameters.get("MONGO")==null) {
+				try {					
 					startHttpServer();
 				} catch (Exception e) {
 					startPromise.fail(e);
 				}
-			});
+			}else {
+				MongoLayer.init(rxVertx);
+				MessageLog.initLogMongo();	
+				MongoLayer.getInstance("mongo", instance -> {
+					try {
+						mongoLayer = instance;
+						startHttpServer();
+					} catch (Exception e) {
+						startPromise.fail(e);
+					}
+				});
+			}
+			
+
 
 		} catch (Exception e) {
 			startPromise.fail(e);
@@ -101,8 +102,11 @@ public abstract class MainAbstractVerticle extends AbstractVerticle {
 		server = vertx.createHttpServer();
 		loadComponents();
 		startRouter();
-		AuthService authService = AuthService.getInstance();
-		authService.init(vertx, mongoLayer);
+		if(AppConfig.AppParameters.get("MONGO")!=null) {
+			AuthService authService = AuthService.getInstance();
+			authService.init(vertx, mongoLayer);
+		}
+		
 		new CommonRouter().rout(router);
 		loadRouter();
 

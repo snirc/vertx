@@ -20,7 +20,6 @@ import io.vertx.ext.web.handler.SessionHandler;
 import io.vertx.ext.web.sstore.LocalSessionStore;
 import io.vertx.ext.web.sstore.SessionStore;
 import snir.code.config.AppConfig;
-import snir.code.db.MongoLayer;
 
 public abstract class BasicAbstractVerticle extends AbstractVerticle{
 	protected Set<String> allowedHeaders;
@@ -29,12 +28,9 @@ public abstract class BasicAbstractVerticle extends AbstractVerticle{
 
 	protected HttpServer server;
 	protected final static Logger logger = LoggerFactory.getLogger(BasicAbstractVerticle.class);
-	protected MongoLayer cryptoMongoLayer;
 	protected Future<Void> startFuture;
 	private List<Future> futures;
 			
-	
-
 
 	protected abstract void loadRouter() throws Exception;
 	protected abstract void loadComponents() throws Exception;

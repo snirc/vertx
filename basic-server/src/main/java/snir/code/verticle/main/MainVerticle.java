@@ -24,9 +24,9 @@ public final class MainVerticle extends MainAbstractVerticle {
 	@Override
 	protected void loadComponents() throws Exception {
 		
-		MongoLayer.getInstance("mongo", instance->{
-			mongoLayer = instance;
-		});
+		
+		MongoLayer.getInstance("mongo", instance->{ mongoLayer = instance; });
+		 
 		commonService = new CommonService();
 		MessageLog.logMessage(MessageKey.OK,"Init completed", logger);
 		

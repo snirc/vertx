@@ -2,10 +2,10 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	
+
 	<groupId>snir.code</groupId>
 	<artifactId>SVC-dependencies</artifactId>
-    <version>SVC-dependencies-0.0.1</version>  
+	<version>SVC-dependencies-0.0.1</version>
 	<packaging>pom</packaging>
 	<properties>
 
@@ -17,11 +17,13 @@
 		<log4j2.version>2.5</log4j2.version>
 		<disruptor.version>3.3.4</disruptor.version>
 
+		<maven.compiler.target>11</maven.compiler.target>
+		<maven.compiler.source>11</maven.compiler.source>
 	</properties>
 
-  
-  <dependencies>
- 	
+
+	<dependencies>
+
 		<dependency>
 			<groupId>org.apache.maven</groupId>
 			<artifactId>maven-model</artifactId>
@@ -248,5 +250,5 @@
 			<version>${vertx.version}</version>
 		</dependency>
 	</dependencies>
-  
+
 </project>

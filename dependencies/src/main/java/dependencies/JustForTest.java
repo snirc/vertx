@@ -6,6 +6,7 @@ public class JustForTest {
 
 	
 	public static void main(String[] args) {
+		
 		ArrayList<String> x = new ArrayList<String>();
 		x.add("yoyo");
 		x.add("GL");

@@ -1,21 +1,21 @@
 {
 	"hosts": [
 		{
-			"host": "cluster0-shard-00-00-jbnpq.mongodb.net",
+			"host": "cluster0-shard-00-02.shkn4.mongodb.net",			         
 			"port": 27017
 		},
 		{
-			"host": "cluster0-shard-00-01-jbnpq.mongodb.net",
+			"host": "cluster0-shard-00-00.shkn4.mongodb.net",			         
 			"port": 27017
 		},
 		{
-			"host": "cluster0-shard-00-02-jbnpq.mongodb.net",
+			"host": "cluster0-shard-00-01.shkn4.mongodb.net",			         
 			"port": 27017
 		}
 	],
 	"serverSelectionTimeoutMS": 3000,
 	"maxPoolSize": 10,
-	"minPoolSize": 2,
+	"minPoolSize": 2,	
 	"maxIdleTimeMS": 300000,
 	"maxLifeTimeMS": 3600000,
 	"waitQueueMultiple": 10,
@@ -29,8 +29,8 @@
 	"sendBufferSize": 8192,
 	"receiveBufferSize": 8192,
 	"keepAlive": true,
-	"username": "snir",
-	"password": "Shoko1q2w",
+	"username": "shoko",
+	"password": "shoko123",
 	"ssl": true,
 	"authSource": "admin",
 	"heartbeat.socket": {

@@ -183,6 +183,17 @@ public class MongoLayer {
 		}
 
 	}
+	
+	public void replaceDocuments(String collectionName, JsonObject jsonDoc, String id) {
+		try {
+			JsonObject query = new JsonObject().put("_id", id);
+			mongoClient.replaceDocuments(collectionName, query, jsonDoc);
+			// logger.info("saved document");
+		} catch (Exception e) {
+			logger.error("failed to save document");
+		}
+
+	}
 
 	public void insertingDocuments(String collectionName, JsonObject jsonDoc,
 			Handler<AsyncResult<String>> resultHandler) {
