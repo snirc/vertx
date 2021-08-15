@@ -60,6 +60,8 @@ public class MessageConfig {
     	GET_DB_STOCK_ERROR(30001), 
     	STOCK_MOVEMENT(302),
     	STOCK_MOVEMENT_ERROR(30002),  
+    	STOCK_SEARCH_RESULT(303),
+    	STOCK_SEARCH_ERROR(30002),  
     	
     	END(99999) ;
     	
